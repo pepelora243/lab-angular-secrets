@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SessionService } from '../session.service';
+import {UserObject} from '../interfaces/user-interface';
 
 @Component({
   selector: 'app-auth-signup',
@@ -6,8 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./auth-signup.component.css']
 })
 export class AuthSignupComponent implements OnInit {
-  constructor() { }
+
+  user1:Object={};
+
+  constructor(public sesi:SessionService) { }
 
   ngOnInit() {
   }
+  
+  signup(user:UserObject){
+    console.log(user);
+    this.sesi.signup(user);
+  }
+
 }

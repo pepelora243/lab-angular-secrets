@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { AuthLoginComponent } from './auth-login/auth-login.component';
 import { AuthSignupComponent } from './auth-signup/auth-signup.component';
 import { MyPrivatePageComponent } from './my-private-page/my-private-page.component';
+import { RouterModule } from '@angular/router';
+import { routes } from './routes';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,7 @@ import { MyPrivatePageComponent } from './my-private-page/my-private-page.compon
     MyPrivatePageComponent
   ],
   imports: [
+    RouterModule.forRoot(routes),
     BrowserModule,
     FormsModule,
     HttpModule
@@ -24,4 +27,5 @@ import { MyPrivatePageComponent } from './my-private-page/my-private-page.compon
   providers: [SessionService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
